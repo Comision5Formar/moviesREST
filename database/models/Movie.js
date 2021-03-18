@@ -11,7 +11,12 @@ module.exports = (sequelize, dataTypes) => {
         },
         title : {
             type : dataTypes.STRING(500),
-            allowNull : false
+            allowNull : false,
+            validate : {
+                notNull : {
+                    msg : "El campo title no puede ser nulo"
+                }
+            }
         },
         rating : {
             type : dataTypes.DECIMAL(3,1).UNSIGNED,
